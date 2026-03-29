@@ -1,3 +1,8 @@
+# To flash Boardsource Lulu
+```bash
+qmk flash -kb boardsource/lulu/rp2040 -km vinamarora8
+```
+
 # Quantum Mechanical Keyboard Firmware
 
 [![Current Version](https://img.shields.io/github/tag/qmk/qmk_firmware.svg)](https://github.com/qmk/qmk_firmware/tags)
