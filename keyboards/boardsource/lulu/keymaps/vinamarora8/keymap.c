@@ -157,10 +157,20 @@ static void render_layer_info(void) {
 
 }
 
+
+void render_mod_status(void) {
+    uint8_t mod_state = get_mods();
+
+    oled_write_P(PSTR("CTRL\n"), mod_state & MOD_MASK_CTRL ? true : false);
+    oled_write_P(PSTR("SHFT\n"), mod_state & MOD_MASK_SHIFT ? true : false);
+    oled_write_P(PSTR("ALT\n"), mod_state & MOD_MASK_ALT ? true : false);
+}
+
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         render_layer_info();
     } else {
+        // render_mod_status();
         render_infinity_logo();
     }
     return false;
